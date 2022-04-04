@@ -1,0 +1,9 @@
+- hosts: wp_server
+  gather_facts: False
+  become: true
+
+  roles:
+    - server
+    - php
+    - mysql
+    - wordpress

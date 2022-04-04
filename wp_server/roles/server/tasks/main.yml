@@ -1,0 +1,7 @@
+- name: install apache packages
+  apt: name={{ item }} update_cache=yes state=latest
+  loop: ['apache2', 'libapache2-mod-php']
+
+- name: start apache service
+  systemd: name=apache2 state=started enabled=yes
+ 
